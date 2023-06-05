@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.cdnfonts.com/css/prompt" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>adndev</title>
+  </head>
+  <body>
+    <header>
+    <div class="navbar">
+        <div class="logo"><a href="./index.html">ADEV</a></div>
+        <ul class="links">
+            <li><a id="menu_Home" href="./index.html">Home</a></li>
+            <li><a id="menu_About" href="./about.html">About</a></li>
+            <li><a id="menu_Project" href="#">Project</a></li>
+            <li><a id="menu_Contact" href="#">Contact</a></li>
+        </ul>
+        <li><a href="#" class="action_btn" id="btn_language" onclick="togglelang()" >Language : EN</a></li>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div class="dropdown_menu">
+        <li><a id="menu_Home" href="#">Home</a></li>
+        <li><a id="menu_About" href="#">About</a></li>
+        <li><a id="menu_Project" href="#">Project</a></li>
+        <li><a id="menu_Contact" href="#">Contact</a></li>
+        <li><a href="#" class="action_btn" id="btn_language" onclick="togglelang()" >Language : EN</a></li>
+    </div>
+    </header>
+    <ul class="item">
+        <li>A</li>
+        <li>D</li>
+        <li>N</li>
+        <li>D</li>
+        <li>E</li>
+        <li>V</li>
+      </ul>
+      <div class="detail" >
+        <h1 id="detail1" >Adun<span>Phiongam</span> </h1>
+        <p id="detail2">Computer Science Undergraduate</p>
+        <p id="detail3">with highly skilled in designing & deploying</p>
+        <p id="detail4">computer applications</p>
+        <p id="detail5">and proficient in building, testing & debugging the code.</p>
+        <p id="detail6">Seeking to leverage solid development</p>
+        <p id="detail7">skills with a focus on collaboration,</p>
+        <p id="detail8">communication, passion, and creativity</p>
+        <p id="detail9">as a programmer for your company.</p>
+        <a id="detail10" href="./adun's resume.jpg" download="./adun's resume.jpg">Download Resume's</a>
+      </div>
+      <div class="images">
+        <img src="./photo/qrcode.jpg" class="qrcode">
+        <img src="./photo/1.png" class="ad">
+      <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropdownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function() {
+            dropdownMenu.classList.toggle('open')
+            const isOpen = dropdownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+      </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        var th = {
+            menu_Home: "หน้าแรก",
+            menu_About: "เกี่ยวกับ",
+            menu_Project: "ผลงาน",
+            menu_Contact: "ติดต่อ",
+            btn_language: "Language:TH",
+            detail1:"อดุลย์ ผิวงาม",
+            detail2:"นักศึกษาวิทยาการคอมพิวเตอร์ระดับปริญญาตรี",
+            detail3:"ที่มีความเชี่ยวชาญในการออกแบบและปรับใช้",
+            detail4:"แอปพลิเคชันเว็บไซต์คอมพิวเตอร์",
+            detail5:"และมีความเชี่ยวชาญในการสร้าง ทดสอบ และแก้ไขโค้ด",
+            detail6:"มีความตั้งใจที่จะใช้ทักษะการพัฒนาที่มั่นคง",
+            detail7:"โดยให้ความสำคัญกับการทำงานร่วมกัน",
+            detail8:"การสื่อสาร ความมุ่งมั่น และความคิดสร้างสรรค์",
+            detail9:"เพื่อเป็นโปรแกรมเมอร์ให้กับบริษัทของคุณ",
+            detail10:"ดาวน์โหลด เรซูเม่"
+            
+          };
+          var en = {
+            menu_Home: "Home",
+            menu_About: "About",
+            menu_Project: "Project",
+            menu_Contact: "Contact",
+            btn_language: "Language:EN",
+            detail1:"Adun Phiongam",
+            detail2:"Computer Science Undergraduate",
+            detail3:"with highly skilled in designing & deploying",
+            detail4:"computer applications",
+            detail5:"and proficient in building, testing & debugging the code.",
+            detail6:"Seeking to leverage solid development",
+            detail7:"skills with a focus on collaboration,",
+            detail8:"communication, passion, and creativity",
+            detail9:"as a programmer for your company.",
+            detail10:"DOWNLOAD RESUME"
+          };
+
+        function renderlang(){
+            if(!localStorage.lang){
+                localStorage.setItem('lang','en')
+            }
+            else{
+                $("#menu_Home").text(settext("menu_Home"));
+                $("#menu_About").text(settext("menu_About"));
+                $("#menu_Project").text(settext("menu_Project"));
+                $("#menu_Contact").text(settext("menu_Contact"));
+                $("#btn_language").text(settext("btn_language"));
+                $("#detail1").text(settext("detail1"));
+                $("#detail2").text(settext("detail2"));
+                $("#detail3").text(settext("detail3"));
+                $("#detail4").text(settext("detail4"));
+                $("#detail5").text(settext("detail5"));
+                $("#detail6").text(settext("detail6"));
+                $("#detail7").text(settext("detail7"));
+                $("#detail8").text(settext("detail8"));
+                $("#detail9").text(settext("detail9"));
+                $("#detail10").text(settext("detail10"));
+
+            }
+        }
+        function settext(key) {
+            if (localStorage.lang == "en") {
+              return en[key];
+            } else {
+              return th[key];
+            }
+          }
+          function togglelang() {
+            if (localStorage.lang == "en") localStorage.setItem("lang", "th");
+            else if (localStorage.lang == "th") localStorage.setItem("lang", "en");
+          
+            renderlang();
+            return "now language: " + localStorage.lang;
+          }
+          renderlang();
+      </script>
+      <script>
+        // เพิ่ม event listener เมื่อคลิกที่ dropdown_menu
+        document.querySelector('.dropdown_menu').addEventListener('click', function() {
+          togglelang(); // เรียกใช้งานฟังก์ชัน togglelang()
+        });
+      </script>
+      
+  </body>
+</html>
